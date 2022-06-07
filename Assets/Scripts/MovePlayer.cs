@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float movementVertical;
+    public float rotationHorizontal;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.position = new Vector3 (0, 1.5f, 0);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position = new Vector3( 0, 0.5f, 0);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(0, -rotationHorizontal, 0);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(0, rotationHorizontal, 0);
+        }
     }
 }
